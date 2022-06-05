@@ -3,7 +3,7 @@ class Tile{
     this.button = createButton("");
     tilesDiv.child(this.button);
     this.button.position(x,y);
-    this.button.size(100,100);
+    this.button.size(80,80);
     this.button.style("background-color:red");
     this.button.style("border-radius:5px");
     this.button.style("font-size:40px");
