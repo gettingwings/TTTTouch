@@ -8,9 +8,9 @@ var w,h;
 
 function setup() {
   canvas = createDiv();
-  w = windowWidth
-  h = windowHeight
-  canvas.position(windowWidth/5,windowHeight/5);
+  w = windowWidth/8
+  h = 500
+  canvas.position(windowWidth/5,500);
   createHeading();
   createTiles();
   resetButton();
@@ -36,7 +36,7 @@ function createTiles(){
   for(let y=0;y<3;y++){
     for(let x=0;x<3;x++){
       // tile position being passed
-      tiles.push(new Tile(50*x,50*y));
+      tiles.push(new Tile(w*x,w*y));
     }
   }
 }
@@ -59,10 +59,18 @@ tiles[5].button.html()==tiles[8].button.html() && tiles[8].button.html()==symbol
   
 }
 
+function changeColor(sym){
+  for(var i in tiles ){
+    if(tiles[i].button.html() !== sym){
+      tiles[i].button.html("",false);
+    }
+  }
+}
+
 function resetButton(){
   reset = createButton("Reset");
   canvas.child(reset);
-  reset.position(100,330);
+  reset.position(windowWidth/2-50,windowHeight-100);
   reset.size(100,50);
   reset.style("background-color:red");
   reset.style("border-radius:5px");
@@ -79,7 +87,7 @@ function resetButton(){
 
 function createHeading(){
   heading = createElement('h1', 'TicTacToe');
-  heading.position(windowWidth/5,10);
+  heading.position(w,10);
   heading.style('color', '#FF0000');
   heading.style('width', '300px');
   heading.style('border', 'dotted');
@@ -87,11 +95,5 @@ function createHeading(){
   
 }
 
-function changeColor(sym){
-  for(var i in tiles ){
-    if(tiles[i].button.html() !== sym){
-      tiles[i].button.html("",false);
-    }
-  }
-}
+
  
