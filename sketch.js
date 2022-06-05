@@ -35,7 +35,8 @@ function draw() {
 function createTiles(){
   for(let y=0;y<3;y++){
     for(let x=0;x<3;x++){
-      tiles.push(new Tile(90*x,90*y));
+      // tile position being passed
+      tiles.push(new Tile(50*x,50*y));
     }
   }
 }
