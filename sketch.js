@@ -4,9 +4,12 @@ var turn = "first"; //"second"
 var symbol = "O"; //"X"
 var gameState = "start";
 var heading;
+var w,h;
 
 function setup() {
   canvas = createDiv();
+  w = windowWidth
+  h = windowHeight
   canvas.position(windowWidth/5,windowHeight/5);
   createHeading();
   createTiles();
@@ -32,7 +35,7 @@ function draw() {
 function createTiles(){
   for(let y=0;y<3;y++){
     for(let x=0;x<3;x++){
-      tiles.push(new Tile(100*x,100*y));
+      tiles.push(new Tile(90*x,90*y));
     }
   }
 }
