@@ -8,6 +8,7 @@ var w,h;
 
 function setup() {
   canvas = createDiv();
+  canvas.class("canvas");
   w = windowWidth/8
   h = 500
   canvas.position(windowWidth/5,500);
