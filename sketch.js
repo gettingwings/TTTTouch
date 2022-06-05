@@ -11,10 +11,12 @@ function setup() {
   canvas.style("background-color:red");
   canvas.style("border-radius:5px");
   canvas.style("font-size:35px");
+  canvas.position(10,10);
+  canvas.size(displayWidth-10,displayHeight-10);
   
-  w = windowWidth/8
+  w = displayWidth/8
   h = 500
-  canvas.position(windowWidth/5,500);
+  
   createHeading();
   createTiles();
   resetButton();
@@ -74,13 +76,13 @@ function changeColor(sym){
 function resetButton(){
   reset = createButton("Reset");
   canvas.child(reset);
-  reset.position(windowWidth/2-50,windowHeight-100);
+  reset.position(displayWidth/2-50,windowHeight-100);
   reset.size(100,50);
   reset.style("background-color:red");
   reset.style("border-radius:5px");
   reset.style("font-size:20px");
   
-  reset.mousePressed(()=>{
+  reset.touchStarted(()=>{
     gameState = "start";
     for(var i in tiles){
       tiles[i].rmAttribute();
@@ -91,7 +93,8 @@ function resetButton(){
 
 function createHeading(){
   heading = createElement('h1', 'TicTacToe');
-  heading.position(w,10);
+  canvas.child(heading)
+  heading.position(displayWidth/2-150,10);
   heading.style('color', '#FF0000');
   heading.style('width', '300px');
   heading.style('border', 'dotted');
