@@ -109,7 +109,7 @@ function resetButton(){
   reset.style("border-radius:5px");
   reset.style("font-size:20px");
   
-  reset.mousePressed(()=>{
+  reset.touchStarted(()=>{
     gameState = "start";
     for(var i in tiles){
       tiles[i].rmAttribute();
