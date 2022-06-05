@@ -10,7 +10,7 @@ function setup() {
   w = displayWidth/8
   h = 500
   
-  createCanvas()
+  createDOMCanvas()
   createHeading();
   createTiles();
   resetButton();
@@ -66,7 +66,7 @@ function changeColor(sym){
   }
 }
 
-function createCanvas(){
+function createDOMCanvas(){
   canvas = createDiv();
   canvas.style("border-style:solid");
   canvas.style("border-width:4px");
