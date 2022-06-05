@@ -8,7 +8,7 @@ class Tile{
     this.button.style("border-radius:5px");
     this.button.style("font-size:40px");
     this.clicked = false;
-    this.button.mouseClicked(()=>{
+    this.button.touchStarted(()=>{
       if(turn=="first" && this.clicked==false)        {
         this.button.html("O",false);
         turn = "second";
