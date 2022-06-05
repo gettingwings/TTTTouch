@@ -7,20 +7,13 @@ var heading;
 var w,h;
 
 function setup() {
-  canvas = createDiv();
-  canvas.style("background-color:red");
-  canvas.style("border-radius:5px");
-  canvas.style("font-size:35px");
-  canvas.position(10,10);
-  canvas.size(displayWidth-10,displayHeight-10);
-  
   w = displayWidth/8
   h = 500
   
+  createCanvas()
   createHeading();
   createTiles();
   resetButton();
-  
 }
 
 function draw() {
@@ -73,10 +66,20 @@ function changeColor(sym){
   }
 }
 
+function createCanvas(){
+  canvas = createDiv();
+  canvas.style("border:4px");
+  canvas.style("border-color:red");
+  canvas.style("border-radius:5px");
+  canvas.style("font-size:35px");
+  canvas.position(10,10);
+  canvas.size(displayWidth-10,displayHeight-10);
+}
+
 function resetButton(){
   reset = createButton("Reset");
   canvas.child(reset);
-  reset.position(displayWidth/2-50,windowHeight-100);
+  reset.position(displayWidth/2-50,displayHeight-100);
   reset.size(100,50);
   reset.style("background-color:red");
   reset.style("border-radius:5px");
