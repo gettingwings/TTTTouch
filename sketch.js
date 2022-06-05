@@ -68,7 +68,8 @@ function changeColor(sym){
 
 function createCanvas(){
   canvas = createDiv();
-  canvas.style("border:4px");
+  canvas.style("border-style:solid");
+  canvas.style("border-width:4px");
   canvas.style("border-color:red");
   canvas.style("border-radius:5px");
   canvas.style("font-size:35px");
@@ -80,7 +81,7 @@ function resetButton(){
   reset = createButton("Reset");
   canvas.child(reset);
   reset.position(displayWidth/2-50,displayHeight-100);
-  reset.size(100,50);
+  reset.size(displayWidth/3,50);
   reset.style("background-color:red");
   reset.style("border-radius:5px");
   reset.style("font-size:20px");
