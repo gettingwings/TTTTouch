@@ -71,9 +71,8 @@ function createDOMCanvas(){
   canvas.style("border-color:red");
   canvas.style("border-radius:5px");
   canvas.style('align-content', 'center');
-  //canvas.style("font-size:35px");
   canvas.position(10,10);
-  canvas.size(w-20,h-20);
+  canvas.size(w,h-20);
   
   tilesDiv = createDiv();
   tilesDiv.position(w/5,h/5);
@@ -83,7 +82,7 @@ function createDOMCanvas(){
 function createHeading(){
   heading = createElement('h1', 'TicTacToe');
   canvas.child(heading);
-  heading.position(w/5,10);
+  heading.position(w/2-150,10);
   heading.style('color', '#FF0000');
   heading.style('width', '300px');
   heading.style('border', 'dotted');
